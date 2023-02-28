@@ -29,12 +29,35 @@ CountArray(arrayResult);
 PrintResult(arrayResult, count);
 
 
-
 //Задача 36: Задайте одномерный массив, заполненный случайными числами. 
 //Найдите сумму элементов, стоящих на нечётных позициях.
 //[3, 7, 23, 12] -> 19
 //[-4, -6, 89, 6] -> 0
 
+int sum = 0;
+int[] arrayRes = new int[4];
+int[] MyArray()
+{
+    int[] array2 = new int[4];
+    for (int i = 0; i < array2.Length; i++)
+        array2[i] = new Random().Next(-100, 100);
+    return array2;
+}
+void SumArray (int[] array2)
+{
+    for (int i = 0; i < array2.Length; i+=2)
+    {
+       sum += array2[i];
+    }
+}
+void PrintRes(int[] array2, int sum)
+{
+    Console.WriteLine($"Массив {string.Join("|", array2)}");
+    Console.WriteLine($"Сумма элементов, стоящих на нечетных позициях: {sum}");
+}
+arrayRes = MyArray();
+SumArray(arrayRes);
+PrintRes(arrayRes, sum);
 
 //Задача 38: Задайте массив вещественных чисел. 
 //Найдите разницу между максимальным и минимальным элементов массива.
