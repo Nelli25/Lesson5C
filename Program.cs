@@ -21,7 +21,7 @@ void CountArray (int[] array)
 }
 void PrintResult(int[] array, int count)
 {
-    Console.WriteLine($"Массив {string.Join("|", array)}");
+    Console.WriteLine($"Массив 1: {string.Join("|", array)}");
     Console.WriteLine($"Количество четных чисел в массиве: {count}");
 }
 arrayResult = GetArray();
@@ -52,7 +52,7 @@ void SumArray (int[] array2)
 }
 void PrintRes(int[] array2, int sum)
 {
-    Console.WriteLine($"Массив {string.Join("|", array2)}");
+    Console.WriteLine($"Массив 2: {string.Join("|", array2)}");
     Console.WriteLine($"Сумма элементов, стоящих на нечетных позициях: {sum}");
 }
 arrayRes = MyArray();
@@ -62,3 +62,28 @@ PrintRes(arrayRes, sum);
 //Задача 38: Задайте массив вещественных чисел. 
 //Найдите разницу между максимальным и минимальным элементов массива.
 //[3 7 22 2 78] -> 76
+
+double diff = 0;
+double[] arrayResult3 = new double[6];
+double[] NewArray()
+{
+    double[] array3 = new double[6];
+    for (int i = 0; i < array3.Length; i++)
+        array3[i] = new Random().Next(-100, 100);
+    return array3;
+}
+void DiffArray (double[] array3)
+{
+    for (int i = 0; i < array3.Length; i++)
+    {
+       diff = array3.Max() - array3.Min();
+    }
+}
+void PrintResult3(double[] array3, double diff)
+{
+    Console.WriteLine($"Массив 3: {string.Join("|", array3)}");
+    Console.WriteLine($"Hазница между максимальным и минимальным элементов массива: {diff}");
+}
+arrayResult3 = NewArray();
+DiffArray(arrayResult3);
+PrintResult3(arrayResult3, diff);
